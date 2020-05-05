@@ -1,12 +1,12 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=69 format=2]
 
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-03.png" type="Texture" id=1]
+[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-2-00.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://AllTiles.tres" type="TileSet" id=3]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" type="Texture" id=4]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" type="Texture" id=5]
+[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-2-01.png" type="Texture" id=4]
+[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-2-02.png" type="Texture" id=5]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-fall-00.png" type="Texture" id=6]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" type="Texture" id=7]
+[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-idle-2-03.png" type="Texture" id=7]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" type="Texture" id=8]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-fall-01.png" type="Texture" id=9]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-jump-00.png" type="Texture" id=10]
@@ -20,8 +20,7 @@
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" type="Texture" id=18]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-00.png" type="Texture" id=19]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-01.png" type="Texture" id=20]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-crouch-00.png" type="Texture" id=21]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-crouch-01.png" type="Texture" id=22]
+[ext_resource path="res://DOWNLOADS/Monsters_Creatures_Fantasy/Monsters_Creatures_Fantasy/Mushroom/Idle.png" type="Texture" id=21]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack3-00.png" type="Texture" id=23]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-air-attack3-rdy-00.png" type="Texture" id=24]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-air-attack-3-end-00.png" type="Texture" id=25]
@@ -33,10 +32,8 @@
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-air-attack2-02.png" type="Texture" id=31]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack3-05.png" type="Texture" id=32]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-air-attack2-01.png" type="Texture" id=33]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-crouch-03.png" type="Texture" id=34]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-air-attack1-00.png" type="Texture" id=35]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-air-attack-3-end-02.png" type="Texture" id=36]
-[ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-crouch-02.png" type="Texture" id=37]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack1-01.png" type="Texture" id=38]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack1-02.png" type="Texture" id=39]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack2-01.png" type="Texture" id=40]
@@ -54,67 +51,143 @@
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack2-02.png" type="Texture" id=52]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack2-05.png" type="Texture" id=53]
 [ext_resource path="res://DOWNLOADS/Adventurer-1.5/Individual Sprites/adventurer-attack3-04.png" type="Texture" id=54]
+[ext_resource path="res://World.gd" type="Script" id=55]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": false,
+"loop": true,
 "name": "Fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "Jump",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "WallSlide",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 40 ), ExtResource( 52 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 53 ) ],
-"loop": true,
-"name": "Attack2",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 35 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "Jump Attack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 30 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 51 ) ],
-"loop": false,
-"name": "Attack1",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 42 ), ExtResource( 27 ), ExtResource( 45 ), ExtResource( 54 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "Attack3",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 37 ), ExtResource( 34 ) ],
+"frames": [ ExtResource( 31 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 36 ) ],
 "loop": true,
-"name": "Crouch",
+"name": "FallAttack",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 30 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 51 ) ],
 "loop": true,
-"name": "Run",
-"speed": 5.0
+"name": "Attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "JumpAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 40 ), ExtResource( 52 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "Attack2",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.742, 29.859 )
 
+[sub_resource type="ParticlesMaterial" id=9]
+
+[sub_resource type="Curve" id=10]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0.0189873, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+next_pass = SubResource( 9 )
+trail_size_modifier = SubResource( 13 )
+emission_shape = 1
+emission_sphere_radius = 1.48
+flag_disable_z = true
+spread = 0.0
+flatness = 0.63
+gravity = Vector3( 0, 103.189, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 66.67
+linear_accel_random = 1.0
+radial_accel = -100.0
+radial_accel_random = 0.69
+radial_accel_curve = SubResource( 11 )
+angle = 215.2
+angle_random = 0.25
+scale = 3.0
+scale_random = 0.16
+hue_variation = 0.02
+hue_variation_random = 1.0
+
+[sub_resource type="LargeTexture" id=15]
+
+[sub_resource type="GradientTexture" id=16]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 21 )
+region = Rect2( 0, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 21 )
+region = Rect2( 150, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 21 )
+region = Rect2( 300, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 21 )
+region = Rect2( 450, 50, 150, 50 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 10, 17.4844 )
+
 [node name="World" type="Node"]
+script = ExtResource( 55 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 128, 794.449 )
+position = Vector2( -24, 720 )
 z_index = 1
 script = ExtResource( 2 )
 __meta__ = {
@@ -127,13 +200,79 @@ current = true
 [node name="PlayerSprite" type="AnimatedSprite" parent="Player"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-animation = "Attack3"
-frame = 1
+animation = "WallSlide"
 playing = true
 
 [node name="PlayerBox" type="CollisionShape2D" parent="Player"]
+visible = false
 position = Vector2( 0, 6.009 )
 shape = SubResource( 2 )
+
+[node name="WallParticlesRight" type="Particles2D" parent="Player"]
+visible = false
+modulate = Color( 0.270588, 0.176471, 0.0470588, 1 )
+position = Vector2( 12, 32 )
+scale = Vector2( 1.158, 1 )
+amount = 18
+speed_scale = 1.65
+explosiveness = 0.24
+randomness = 0.49
+visibility_rect = Rect2( -99.838, -99.521, 200, 200 )
+process_material = SubResource( 14 )
+texture = SubResource( 15 )
+normal_map = SubResource( 16 )
+
+[node name="WallParticlesLeft" type="Particles2D" parent="Player"]
+visible = false
+modulate = Color( 0.270588, 0.176471, 0.0470588, 1 )
+position = Vector2( -14, 32 )
+scale = Vector2( 1.158, 1 )
+amount = 18
+speed_scale = 1.65
+explosiveness = 0.24
+randomness = 0.49
+visibility_rect = Rect2( -99.838, -99.521, 200, 200 )
+process_material = SubResource( 14 )
+texture = SubResource( 15 )
+normal_map = SubResource( 16 )
+
+[node name="MissingHealth" type="ColorRect" parent="Player"]
+margin_left = -32.0
+margin_top = -47.9999
+margin_right = 32.0
+margin_bottom = -39.9999
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="ColorRect" parent="Player"]
+margin_left = -32.0
+margin_top = -48.0
+margin_right = 32.0
+margin_bottom = -40.0
+size_flags_stretch_ratio = 0.0
+color = Color( 0, 1, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mushroom" type="KinematicBody2D" parent="."]
+position = Vector2( 456, 808 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MushroomSprite" type="AnimatedSprite" parent="Mushroom"]
+frames = SubResource( 7 )
+animation = "Idle"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom"]
+position = Vector2( 0, 7.591 )
+shape = SubResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -143,3 +282,4 @@ tile_data = PoolIntArray( 458740, 9, 0, 458741, 11, 0, 458746, 9, 0, 458747, 11,
 __meta__ = {
 "_edit_lock_": true
 }
+[connection signal="animation_finished" from="Player/PlayerSprite" to="Player" method="_on_PlayerSprite_animation_finished"]
