@@ -1,4 +1,4 @@
-### Scuffed-Quest
+# Scuffed-Quest
 
 1. install git: https://git-scm.com/download/win
 
@@ -9,7 +9,7 @@
 4. navigate to directory from step 3 in powershell
 
 5. run command: git clone https://github.com/ChaseMilligan/Scuffed-Quest.git
-# This will create a new folder named "Scuffed-Quest" which contains all the game files.
+#### This will create a new folder named "Scuffed-Quest" which contains all the game files.
 
 6. Open and/or Install Godot on your computer
 
@@ -22,4 +22,4 @@
 10. Click "Open"
 
 11. Click "Import & Edit"
-# This should launch the project in Godot
+#### This should launch the project in Godot
