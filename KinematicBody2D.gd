@@ -10,30 +10,45 @@ var grabState = false
 var grabDirection = ''
 var attacking = false
 var attackType = 0
+var grabIter = 0
+var canJump = true
+var knockedBack = false
 
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.name == 'Mushroom':
-			$Health.rect_scale.x = $Health.rect_scale.x - .05
-	
 	if Input.is_action_just_pressed("ui_select"):
-			if attacking:
-				pass
-			else:
-				attackType = randi() % 3
-				attacking = true
+		if attacking:
+			pass
+		else:
+			attackType = randi() % 3
+			attacking = true
+			
+	if knockedBack:
+		grabState = false
+		attacking = false
+		$PlayerSprite.play('Hurt')
+		if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_select"):
+			$PlayerSprite.play('Hurt')
+			
+		if $PlayerSprite.flip_h == false:
+			motion.x = -SPEED
+		if $PlayerSprite.flip_h == true:
+			motion.x = SPEED
+		motion.y = -200
 		
 	if is_on_floor():
 		grabState = false
 		grabDirection = ''
+		canJump = true
 		
 		if attacking:
+			$Area2D.monitoring = true
 			if $PlayerSprite.flip_h == false:
+				$Area2D.scale.x = -1
 				motion.x = 1
 			elif $PlayerSprite.flip_h == true:
+				$Area2D.scale.x = 1
 				motion.x = -1
 			else:
 				pass
@@ -46,6 +61,8 @@ func _physics_process(delta):
 				$PlayerSprite.play("Attack3")
 			else:
 				pass
+		else:
+			$Area2D.monitoring = false
 		
 		if motion.x == 0 && motion.y < 21:
 			$PlayerSprite.play('Idle')
@@ -96,6 +113,7 @@ func _physics_process(delta):
 			else:
 				motion.y = JUMP_HEIGHT
 	elif is_on_wall():
+		canJump = true
 		$PlayerSprite.play('WallSlide')
 		grabState = false
 		grabDirection = ''
@@ -119,9 +137,21 @@ func _physics_process(delta):
 			else:
 				motion.x = -SPEED
 				$PlayerSprite.flip_h = true
+		if Input.is_action_just_pressed("ui_up") && canJump == true:
+			motion.y = JUMP_HEIGHT
+			if Input.is_action_pressed("ui_right"):
+				$PlayerSprite.flip_h = false
+				motion.x = SPEED
+			if Input.is_action_pressed("ui_left"):
+				$PlayerSprite.flip_h = true
+				motion.x = -SPEED			
+			canJump = false
+			
 		if motion.y < 0:
 			if attacking:
 				$PlayerSprite.play('JumpAttack')
+			elif !canJump:
+				$PlayerSprite.play('SummerSlt')
 			else:
 				$PlayerSprite.play('Jump')
 		else:
@@ -131,6 +161,11 @@ func _physics_process(delta):
 				$PlayerSprite.play('Fall')
 			
 	if grabState == true:
+		canJump = true
+		if grabIter == 60:
+			grabIter = 0
+			grabState = false
+			
 		$PlayerSprite.play('WallSlide')
 		motion.y = 10
 		if grabDirection == 'right':
@@ -140,15 +175,18 @@ func _physics_process(delta):
 				motion.x = -SPEED
 				$PlayerSprite.flip_h = true
 				grabState = false
+				grabIter = 0
 			if Input.is_action_pressed("ui_left"):
 				motion.x = -SPEED
 				$PlayerSprite.flip_h = false
 				grabState = false
+				grabIter = 0
 			if Input.is_action_pressed("ui_up"):
 				motion.y = JUMP_HEIGHT
 				motion.x = -SPEED
 				$PlayerSprite.flip_h = true
 				grabState = false
+				grabIter = 0
 		elif grabDirection == 'left':
 			$WallParticlesLeft.visible = true
 			if attacking:
@@ -156,14 +194,18 @@ func _physics_process(delta):
 				motion.x = SPEED
 				$PlayerSprite.flip_h = !$PlayerSprite.flip_h
 				grabState = false
+				grabIter = 0
 			if Input.is_action_pressed("ui_right"):
 				motion.x = SPEED
 				grabState = false
+				grabIter = 0
 			if Input.is_action_pressed("ui_up"):
 				motion.y = JUMP_HEIGHT
 				motion.x = SPEED
 				$PlayerSprite.flip_h = !$PlayerSprite.flip_h
 				grabState = false
+				grabIter = 0
+		grabIter += 1
 		pass
 	else:
 		$WallParticlesLeft.visible = false
@@ -172,6 +214,15 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP)
 	pass
 
-
 func _on_PlayerSprite_animation_finished():
 	attacking = false
+
+func _on_Area2D_body_entered(body):
+	#Fired when Mushroom is entered
+	if body.name == 'Player':
+		$Health.rect_scale.x = $Health.rect_scale.x - .05
+		knockedBack = true
+		yield(get_tree().create_timer(.08),"timeout")
+		knockedBack = false
+	else:
+		pass

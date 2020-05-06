@@ -330,10 +330,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="18"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="18/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="18/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, 16, 0, 16, -16 )
 
 [node name="19" type="Sprite" parent="."]
 position = Vector2( 320, 64 )
@@ -347,10 +346,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="19"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="19/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="19/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, -16, 0, 16, 16, 16, -16 )
 
 [node name="20" type="Sprite" parent="."]
 position = Vector2( 384, 64 )
@@ -364,10 +362,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="20"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="20/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="20/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, -16, 16, 16, 0, 16, -16 )
 
 [node name="21" type="Sprite" parent="."]
 position = Vector2( 448, 64 )
@@ -381,10 +378,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="21"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="21/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="21/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, -16, 0, 16, -16 )
 
 [node name="22" type="Sprite" parent="."]
 position = Vector2( 256, 128 )
@@ -398,10 +394,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="22"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="22/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="22/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, 0, 16, 16, 16, 16, -16 )
 
 [node name="23" type="Sprite" parent="."]
 position = Vector2( 320, 128 )
@@ -415,10 +410,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="23"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="23/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="23/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( 0, -16, 16, 16, 16, -16 )
 
 [node name="24" type="Sprite" parent="."]
 position = Vector2( 384, 128 )
@@ -432,10 +426,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="24"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="24/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="24/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, -16, 16, 0, -16 )
 
 [node name="25" type="Sprite" parent="."]
 position = Vector2( 448, 128 )
@@ -449,10 +442,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="25"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="25/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="25/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, -16, 16, 0, 16, 16, -16 )
 
 [node name="26" type="Sprite" parent="."]
 position = Vector2( 256, 192 )
@@ -483,10 +475,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="27"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="27/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="27/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, -16, 16, 16, 16, -16 )
 
 [node name="28" type="Sprite" parent="."]
 position = Vector2( 384, 192 )
@@ -500,10 +491,9 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="28"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="28/StaticBody2D"]
-visible = false
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="28/StaticBody2D"]
 position = Vector2( 16, 16 )
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -16, 16, 16, -16, -16, -16, -16, 16 )
 
 [node name="29" type="Sprite" parent="."]
 position = Vector2( 448, 192 )

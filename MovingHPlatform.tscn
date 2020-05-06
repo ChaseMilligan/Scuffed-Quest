@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://AllTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://MovingHPlatform.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 704, 384, 0, 0, 0, 0, 1280, 384, 0, 0, 0, 0, 704, 384 )
+}
+
+[node name="MovingHPlatform" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 256, 0 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 704, 384 )
+rotate = false
+
+[node name="TileMap" type="TileMap" parent="Path2D/PathFollow2D"]
+position = Vector2( -960, -384 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 720924, 9, 0, 720925, 10, 0, 720926, 10, 0, 720927, 11, 0, 786460, 0, 0, 786461, 1, 0, 786462, 1, 0, 786463, 2, 0, 851996, 22, 0, 851997, 4, 0, 851998, 4, 0, 851999, 25, 0, 917532, 23, 0, 917533, 26, 0, 917534, 29, 0, 917535, 24, 0, 983069, 22, 0, 983070, 25, 0, 1048605, 23, 0, 1048606, 24, 0 )
