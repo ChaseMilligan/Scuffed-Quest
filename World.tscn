@@ -379,7 +379,6 @@ script = ExtResource( 34 )
 [node name="MushroomSprite" type="AnimatedSprite" parent="EnemyPath/PathFollow2D/Mushroom"]
 frames = SubResource( 24 )
 animation = "Idle"
-frame = 3
 playing = true
 
 [node name="MainHitBox" type="CollisionShape2D" parent="EnemyPath/PathFollow2D/Mushroom"]
