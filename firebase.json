@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "scuffed-quest-beta",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
