@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Buttons.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1800.0
+margin_bottom = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1680.0
+margin_bottom = 920.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 644.0
+margin_right = 1035.0
+margin_bottom = 920.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/ButtonContainer"]
+margin_top = 417.0
+margin_right = 391.0
+margin_bottom = 502.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.819608, 0.133333, 0.133333, 1 )
+custom_colors/font_color_pressed = Color( 0.690196, 0.054902, 0.054902, 1 )
+keep_pressed_outside = true
+text = "Play Game"
+flat = true
+script = ExtResource( 3 )
+sceneToLoad = "World.tscn"

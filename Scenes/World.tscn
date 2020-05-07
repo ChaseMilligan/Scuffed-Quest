@@ -1,0 +1,177 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TileSets/Ruins.tres" type="TileSet" id=2]
+[ext_resource path="res://Sprites/Enemies/Monsters_Creatures_Fantasy/Mushroom/Idle.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Enemies/Monsters_Creatures_Fantasy/Mushroom/Run.png" type="Texture" id=22]
+[ext_resource path="res://Scripts/Path2D.gd" type="Script" id=34]
+[ext_resource path="res://Sprites/Enemies/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" type="Texture" id=63]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 824, 493, 0, 0, 0, 0, 952, 493, 0, 0, 0, 0, 824, 493 )
+}
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 21 )
+region = Rect2( 150, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 21 )
+region = Rect2( 300, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 21 )
+region = Rect2( 450, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 63 )
+region = Rect2( 0, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 63 )
+region = Rect2( 150, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 63 )
+region = Rect2( 300, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 63 )
+region = Rect2( 450, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 22 )
+region = Rect2( 150, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 22 )
+region = Rect2( 300, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 22 )
+region = Rect2( 450, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 22 )
+region = Rect2( 600, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 22 )
+region = Rect2( 750, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 22 )
+region = Rect2( 900, 50, 150, 50 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 22 )
+region = Rect2( 1050, 50, 150, 50 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Hurt",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 8.0
+height = 24.638
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 16.0
+height = 11.588
+
+[node name="World" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1064, 1168 )
+
+[node name="EnemyPath" type="Path2D" parent="."]
+visible = false
+position = Vector2( 0, 319 )
+z_index = 2
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemyPath"]
+position = Vector2( 824, 493 )
+rotate = false
+
+[node name="Mushroom" type="KinematicBody2D" parent="EnemyPath/PathFollow2D"]
+position = Vector2( 8, -8.00001 )
+z_index = 1
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MushroomSprite" type="AnimatedSprite" parent="EnemyPath/PathFollow2D/Mushroom"]
+frames = SubResource( 18 )
+animation = "Idle"
+frame = 3
+playing = true
+
+[node name="MainHitBox" type="CollisionShape2D" parent="EnemyPath/PathFollow2D/Mushroom"]
+position = Vector2( 0, 5.552 )
+scale = Vector2( 1, 0.947 )
+shape = SubResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="EnemyPath/PathFollow2D/Mushroom"]
+space_override = 1
+gravity_distance_scale = 0.228
+priority = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyPath/PathFollow2D/Mushroom/Area2D"]
+position = Vector2( 0, 5.326 )
+scale = Vector2( 1, 0.87 )
+shape = SubResource( 20 )
+
+[node name="MissingHealth" type="ColorRect" parent="EnemyPath/PathFollow2D/Mushroom"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = -16.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="ColorRect" parent="EnemyPath/PathFollow2D/Mushroom"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = -16.0
+color = Color( 0, 1, 0.0156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 1, 21, 0, 2, 21, 0, 3, 21, 0, 4, 21, 0, 5, 21, 0, 6, 21, 0, 7, 21, 0, 8, 21, 0, 9, 21, 0, 10, 21, 0, 11, 21, 0, 12, 21, 0, 13, 21, 0, 14, 21, 0, 15, 21, 0, 16, 21, 0, 17, 21, 0, 18, 21, 0, 19, 21, 0, 20, 21, 0, 21, 21, 0, 22, 21, 0, 23, 21, 0, 24, 21, 0, 25, 21, 0, 26, 21, 0, 27, 21, 0, 28, 21, 0, 29, 21, 0, 30, 21, 0, 31, 21, 0, 32, 21, 0, 33, 21, 0, 34, 21, 0, 35, 21, 0, 36, 21, 0, 37, 21, 0, 38, 21, 0, 39, 21, 0, 40, 21, 0, 41, 21, 0, 42, 21, 0, 43, 21, 0, 44, 21, 0, 45, 21, 0, 46, 21, 0, 47, 21, 0, 48, 21, 0, 49, 21, 0, 50, 21, 0, 51, 21, 0, 52, 21, 0, 53, 21, 0, 54, 21, 0, 55, 21, 0, 56, 21, 0, 57, 21, 0, 58, 21, 0, 59, 21, 0, 60, 21, 0, 61, 21, 0, 62, 21, 0, 63, 21, 0, 64, 21, 0, 65, 21, 0, 66, 21, 0, 67, 21, 0, 68, 21, 0, 69, 21, 0, 70, 21, 0, 71, 21, 0, 72, 21, 0, 73, 21, 0, 74, 21, 0, 75, 21, 0, 76, 21, 0, 77, 21, 0, 78, 21, 0, 79, 5, 0, 65536, 13, 0, 65615, 15, 0, 131072, 13, 0, 131151, 15, 0, 196608, 13, 0, 196687, 15, 0, 262144, 13, 0, 262223, 15, 0, 327680, 13, 0, 327759, 15, 0, 393216, 13, 0, 393295, 15, 0, 458752, 13, 0, 458831, 15, 0, 524288, 13, 0, 524367, 15, 0, 589824, 13, 0, 589903, 15, 0, 655360, 13, 0, 655439, 15, 0, 720896, 13, 0, 720975, 15, 0, 786432, 13, 0, 786511, 15, 0, 851968, 13, 0, 852047, 15, 0, 917504, 13, 0, 917583, 15, 0, 983040, 13, 0, 983119, 15, 0, 1048576, 13, 0, 1048655, 15, 0, 1114112, 13, 0, 1114191, 15, 0, 1179648, 13, 0, 1179727, 15, 0, 1245184, 13, 0, 1245263, 15, 0, 1310720, 13, 0, 1310799, 15, 0, 1376256, 13, 0, 1376335, 15, 0, 1441792, 13, 0, 1441871, 15, 0, 1507328, 13, 0, 1507407, 15, 0, 1572864, 13, 0, 1572943, 15, 0, 1638400, 13, 0, 1638479, 15, 0, 1703936, 13, 0, 1704015, 15, 0, 1769472, 13, 0, 1769551, 15, 0, 1835008, 13, 0, 1835087, 15, 0, 1900544, 13, 0, 1900623, 15, 0, 1966080, 13, 0, 1966159, 15, 0, 2031616, 13, 0, 2031695, 15, 0, 2097152, 13, 0, 2097231, 15, 0, 2162688, 13, 0, 2162767, 15, 0, 2228224, 13, 0, 2228303, 15, 0, 2293760, 13, 0, 2293839, 15, 0, 2359296, 13, 0, 2359375, 15, 0, 2424832, 13, 0, 2424911, 15, 0, 2490368, 13, 0, 2490447, 15, 0, 2555904, 13, 0, 2555983, 15, 0, 2621440, 13, 0, 2621519, 15, 0, 2686976, 13, 0, 2687055, 15, 0, 2752512, 13, 0, 2752591, 15, 0, 2818048, 13, 0, 2818127, 15, 0, 2883584, 13, 0, 2883663, 15, 0, 2949120, 13, 0, 2949199, 15, 0, 3014656, 13, 0, 3014735, 15, 0, 3080192, 13, 0, 3080271, 15, 0, 3145728, 13, 0, 3145807, 15, 0, 3211264, 13, 0, 3211343, 15, 0, 3276800, 13, 0, 3276879, 15, 0, 3342336, 23, 0, 3342337, 24, 0, 3342338, 24, 0, 3342339, 24, 0, 3342340, 24, 0, 3342341, 24, 0, 3342342, 24, 0, 3342343, 24, 0, 3342344, 24, 0, 3342345, 24, 0, 3342346, 24, 0, 3342347, 24, 0, 3342348, 24, 0, 3342349, 24, 0, 3342350, 24, 0, 3342351, 24, 0, 3342352, 24, 0, 3342353, 24, 0, 3342354, 24, 0, 3342355, 24, 0, 3342356, 24, 0, 3342357, 24, 0, 3342358, 24, 0, 3342359, 24, 0, 3342360, 24, 0, 3342361, 24, 0, 3342362, 24, 0, 3342363, 24, 0, 3342364, 24, 0, 3342365, 24, 0, 3342366, 24, 0, 3342367, 24, 0, 3342368, 24, 0, 3342369, 24, 0, 3342370, 24, 0, 3342371, 24, 0, 3342372, 24, 0, 3342373, 24, 0, 3342374, 24, 0, 3342375, 24, 0, 3342376, 24, 0, 3342377, 24, 0, 3342378, 24, 0, 3342379, 24, 0, 3342380, 24, 0, 3342381, 24, 0, 3342382, 24, 0, 3342383, 24, 0, 3342384, 24, 0, 3342385, 24, 0, 3342386, 24, 0, 3342387, 24, 0, 3342388, 24, 0, 3342389, 24, 0, 3342390, 24, 0, 3342391, 24, 0, 3342392, 24, 0, 3342393, 24, 0, 3342394, 24, 0, 3342395, 24, 0, 3342396, 24, 0, 3342397, 24, 0, 3342398, 24, 0, 3342399, 24, 0, 3342400, 24, 0, 3342401, 24, 0, 3342402, 24, 0, 3342403, 24, 0, 3342404, 24, 0, 3342405, 24, 0, 3342406, 24, 0, 3342407, 24, 0, 3342408, 24, 0, 3342409, 24, 0, 3342410, 24, 0, 3342411, 24, 0, 3342412, 24, 0, 3342413, 24, 0, 3342414, 24, 0, 3342415, 25, 0 )

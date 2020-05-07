@@ -1,0 +1,256 @@
+[gd_scene load_steps=67 format=2]
+
+[ext_resource path="res://Scripts/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-01.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack1-03.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack-3-end-01.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack2-03.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-05.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack2-04.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-02.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-03.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack1-00.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack1-01.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-jump-03.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-00.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack2-00.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-00.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack-3-end-02.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack1-02.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-jump-02.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack3-rdy-00.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack2-02.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-wall-slide-01.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack1-01.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack2-01.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack2-00.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack2-01.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-01.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack1-00.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-wall-slide-00.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack-3-end-00.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack3-loop-00.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack1-03.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-hurt-02.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack1-04.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-04.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-smrslt-01.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-smrslt-03.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-hurt-00.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-smrslt-02.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack2-02.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-hurt-01.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack2-05.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack1-02.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-air-attack3-loop-01.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-smrslt-00.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-05.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-fall-00.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-idle-2-03.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-idle-2-02.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-fall-01.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-04.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-idle-2-01.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-03.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-jump-00.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-idle-2-00.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-jump-01.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-02.png" type="Texture" id=56]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Attack3",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 3 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "SummerSlt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "JumpAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 40 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "Hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 26 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 55 ), ExtResource( 18 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "WallSlide",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 30 ), ExtResource( 43 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 4 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "FallAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 39 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 41 ) ],
+"loop": false,
+"name": "Attack2",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 42.5217 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+
+[sub_resource type="Curve" id=4]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0.0189873, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+next_pass = SubResource( 3 )
+trail_size_modifier = SubResource( 7 )
+emission_shape = 1
+emission_sphere_radius = 1.48
+flag_disable_z = true
+spread = 0.0
+flatness = 0.63
+gravity = Vector3( 0, 103.189, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 66.67
+linear_accel_random = 1.0
+radial_accel = -100.0
+radial_accel_random = 0.69
+radial_accel_curve = SubResource( 5 )
+angle = 215.2
+angle_random = 0.25
+scale = 3.0
+scale_random = 0.16
+hue_variation = 0.02
+hue_variation_random = 1.0
+
+[sub_resource type="LargeTexture" id=9]
+
+[sub_resource type="GradientTexture" id=10]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 1232, 736 )
+z_index = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.75, 0.75 )
+limit_left = 0
+limit_top = 0
+limit_right = 2650
+limit_bottom = 1664
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+
+[node name="PlayerSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="PlayerBox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 8.297 )
+scale = Vector2( 0.848, 0.651 )
+shape = SubResource( 2 )
+
+[node name="WallParticlesRight" type="Particles2D" parent="."]
+visible = false
+modulate = Color( 0.270588, 0.176471, 0.0470588, 1 )
+position = Vector2( 12, 32 )
+scale = Vector2( 1.158, 1 )
+amount = 18
+speed_scale = 1.65
+explosiveness = 0.24
+randomness = 0.49
+visibility_rect = Rect2( -99.838, -99.521, 200, 200 )
+process_material = SubResource( 8 )
+texture = SubResource( 9 )
+normal_map = SubResource( 10 )
+
+[node name="WallParticlesLeft" type="Particles2D" parent="."]
+visible = false
+modulate = Color( 0.270588, 0.176471, 0.0470588, 1 )
+position = Vector2( -14, 32 )
+scale = Vector2( 1.158, 1 )
+amount = 18
+speed_scale = 1.65
+explosiveness = 0.24
+randomness = 0.49
+visibility_rect = Rect2( -99.838, -99.521, 200, 200 )
+process_material = SubResource( 8 )
+texture = SubResource( 9 )
+normal_map = SubResource( 10 )
+
+[node name="MissingHealth" type="ColorRect" parent="."]
+margin_left = -32.0
+margin_top = -47.9999
+margin_right = 32.0
+margin_bottom = -39.9999
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="ColorRect" parent="."]
+margin_left = -32.0
+margin_top = -48.0
+margin_right = 32.0
+margin_bottom = -40.0
+size_flags_stretch_ratio = 0.0
+color = Color( 0, 1, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2( -1, -1 )
+space_override = 1
+monitoring = false
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 0, -40, 32, -32, 48, -16, 48, 8, 40, 24, 24, 32, 0, 40, 0, 32 )
+[connection signal="animation_finished" from="PlayerSprite" to="." method="_on_PlayerSprite_animation_finished"]
