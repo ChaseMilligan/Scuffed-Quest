@@ -17,10 +17,8 @@ func _process(delta):
 		$MushroomSprite.play('Hurt')
 	else:
 		$MushroomSprite.play('Run')
-	
-	var prevPos = followNode.get_global_position()
+		
 	followNode.set_offset(followNode.get_offset() + SPEED * delta)
-	var pos = followNode.get_global_position()
 	
 	if followNode.get_unit_offset() >= .5:
 		moveDirection = true
