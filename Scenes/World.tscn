@@ -105,7 +105,7 @@ height = 11.588
 [node name="World" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1064, 1168 )
+position = Vector2( 1328, 760 )
 
 [node name="EnemyPath" type="Path2D" parent="."]
 visible = false
@@ -132,7 +132,6 @@ __meta__ = {
 [node name="MushroomSprite" type="AnimatedSprite" parent="EnemyPath/PathFollow2D/Mushroom"]
 frames = SubResource( 18 )
 animation = "Idle"
-frame = 3
 playing = true
 
 [node name="MainHitBox" type="CollisionShape2D" parent="EnemyPath/PathFollow2D/Mushroom"]

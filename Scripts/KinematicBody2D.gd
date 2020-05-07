@@ -140,11 +140,9 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("ui_up") && canJump == true:
 			motion.y = JUMP_HEIGHT
 			if Input.is_action_pressed("ui_right"):
-				$PlayerSprite.flip_h = false
-				motion.x = SPEED
+				pass
 			if Input.is_action_pressed("ui_left"):
-				$PlayerSprite.flip_h = true
-				motion.x = -SPEED			
+				pass
 			canJump = false
 			
 		if motion.y < 0:
