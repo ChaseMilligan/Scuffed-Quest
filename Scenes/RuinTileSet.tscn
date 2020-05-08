@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/1 Tiles/Tile_14.png" type="Texture" id=1]
 [ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/1 Tiles/Tile_15.png" type="Texture" id=2]
@@ -89,9 +89,12 @@ extents = Vector2( 8, 8 )
 extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 16, 8 )
+extents = Vector2( 16, 10 )
 
 [sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 16, 16 )
 
 [node name="Node2D" type="Node2D"]
@@ -883,7 +886,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Tile61" type="Sprite" parent="."]
-position = Vector2( 464, 16 )
+position = Vector2( 464, 12.513 )
 texture = ExtResource( 66 )
 region_rect = Rect2( 0, 0, 30, 30 )
 __meta__ = {
@@ -893,12 +896,12 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile61"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile61/StaticBody2D"]
-position = Vector2( 0, 0.492 )
+position = Vector2( 0, 3.633 )
 scale = Vector2( 1, 1.624 )
 shape = SubResource( 6 )
 
 [node name="Tile62" type="Sprite" parent="."]
-position = Vector2( 528, 16 )
+position = Vector2( 528, 18.877 )
 texture = ExtResource( 67 )
 region_rect = Rect2( 0, 0, 30, 30 )
 __meta__ = {
@@ -910,10 +913,10 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile62/StaticBody2D"]
 position = Vector2( 0, 0.492 )
 scale = Vector2( 1, 1.624 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Tile63" type="Sprite" parent="."]
-position = Vector2( 464, 80 )
+position = Vector2( 464, 82.281 )
 texture = ExtResource( 63 )
 region_rect = Rect2( 0, 0, 30, 30 )
 __meta__ = {
@@ -924,10 +927,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile63/StaticBody2D"]
 scale = Vector2( 0.812, 0.82 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Tile64" type="Sprite" parent="."]
-position = Vector2( 528, 80 )
+position = Vector2( 528, 82.906 )
 texture = ExtResource( 61 )
 region_rect = Rect2( 0, 0, 30, 30 )
 __meta__ = {
@@ -939,7 +942,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile64/StaticBody2D"]
 position = Vector2( 0, 0.492 )
 scale = Vector2( 1, 1.624 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Tile65" type="Sprite" parent="."]
 position = Vector2( 464, 144 )
@@ -954,7 +957,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile65/StaticBody2D"]
 position = Vector2( 0, 0.492 )
 scale = Vector2( 1, 1.624 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Tile66" type="Sprite" parent="."]
 position = Vector2( 528, 144 )
@@ -966,34 +969,34 @@ region_rect = Rect2( 0, 0, 30, 30 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tile66/StaticBody2D"]
 position = Vector2( 0, 2.921 )
 scale = Vector2( 0.812, 0.82 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Tile67" type="Sprite" parent="."]
-position = Vector2( 592, 16 )
+position = Vector2( 592, 5 )
 texture = ExtResource( 64 )
 region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="Tile68" type="Sprite" parent="."]
-position = Vector2( 656, 16 )
+position = Vector2( 656, 6 )
 texture = ExtResource( 68 )
 region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="Tile69" type="Sprite" parent="."]
-position = Vector2( 592, 80 )
+position = Vector2( 592, 71 )
 texture = ExtResource( 69 )
 region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="Tile70" type="Sprite" parent="."]
-position = Vector2( 672, 80 )
+position = Vector2( 672, 67 )
 texture = ExtResource( 62 )
 region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="Tile71" type="Sprite" parent="."]
-position = Vector2( 608, 144 )
+position = Vector2( 608, 129 )
 texture = ExtResource( 72 )
 region_rect = Rect2( 0, 0, 30, 30 )
 
 [node name="Tile72" type="Sprite" parent="."]
-position = Vector2( 672, 144 )
+position = Vector2( 672, 129 )
 texture = ExtResource( 71 )
 region_rect = Rect2( 0, 0, 30, 30 )

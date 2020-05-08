@@ -4,14 +4,14 @@
 [ext_resource path="res://Scripts/MovingHPlatform.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 64, 16 )
+extents = Vector2( 64, 10 )
 
 [sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 448, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="MovingPlatform" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
@@ -20,7 +20,7 @@ collision/safe_margin = 0.001
 motion/sync_to_physics = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0.143173, 16 )
+position = Vector2( 0, 8 )
 z_index = 1
 shape = SubResource( 3 )
 
@@ -28,7 +28,7 @@ shape = SubResource( 3 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 65534, 31, 0, 65535, 32, 0, 0, 32, 0, 1, 33, 0 )
+tile_data = PoolIntArray( 65534, 38, 0, 65535, 38, 0, 0, 38, 0, 1, 38, 0 )
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 2 )

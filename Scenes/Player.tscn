@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-attack3-01.png" type="Texture" id=2]
@@ -56,6 +56,12 @@
 [ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-idle-2-00.png" type="Texture" id=54]
 [ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-jump-01.png" type="Texture" id=55]
 [ext_resource path="res://Sprites/Player/Individual Sprites/adventurer-run-02.png" type="Texture" id=56]
+[ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/2 Background/Layers/1.png" type="Texture" id=57]
+[ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/2 Background/Layers/2.png" type="Texture" id=58]
+[ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/2 Background/Layers/3.png" type="Texture" id=59]
+[ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/2 Background/Layers/5.png" type="Texture" id=60]
+[ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/2 Background/Layers/6.png" type="Texture" id=61]
+[ext_resource path="res://TileSets/ruins-game-tileset-pixel-art/2 Background/Layers/7.png" type="Texture" id=62]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -167,7 +173,7 @@ hue_variation_random = 1.0
 [sub_resource type="GradientTexture" id=10]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 697.715, 947.152 )
+position = Vector2( 720.926, 408.739 )
 z_index = 1
 script = ExtResource( 1 )
 __meta__ = {
@@ -179,8 +185,8 @@ current = true
 zoom = Vector2( 0.75, 0.75 )
 limit_left = 0
 limit_top = 0
-limit_right = 2560
-limit_bottom = 1664
+limit_right = 3840
+limit_bottom = 1080
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
@@ -189,7 +195,6 @@ smoothing_enabled = true
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="PlayerBox" type="CollisionShape2D" parent="."]
@@ -254,4 +259,100 @@ monitoring = false
 
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( 0, -40, 32, -32, 48, -16, 48, 8, 40, 24, 24, 32, 0, 40, 0, 32 )
+
+[node name="RuinsBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="RuinsBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="Sprite" type="Sprite" parent="RuinsBackground/ParallaxLayer"]
+scale = Vector2( 1.66667, 3.33333 )
+texture = ExtResource( 57 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="RuinsBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="RuinsBackground/ParallaxLayer2"]
+position = Vector2( 0, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 58 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="RuinsBackground/ParallaxLayer2"]
+position = Vector2( 960, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 58 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="RuinsBackground"]
+motion_scale = Vector2( 0.23, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="RuinsBackground/ParallaxLayer3"]
+position = Vector2( 0, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 59 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="RuinsBackground/ParallaxLayer3"]
+position = Vector2( 960, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 59 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="RuinsBackground"]
+motion_scale = Vector2( 0.35, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="RuinsBackground/ParallaxLayer4"]
+position = Vector2( 0, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 60 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="RuinsBackground/ParallaxLayer4"]
+position = Vector2( 960, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 60 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="RuinsBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="RuinsBackground/ParallaxLayer5"]
+position = Vector2( 0, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 61 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="RuinsBackground/ParallaxLayer5"]
+position = Vector2( 960, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 61 )
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="RuinsBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="Sprite" type="Sprite" parent="RuinsBackground/ParallaxLayer6"]
+position = Vector2( 0, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 62 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="RuinsBackground/ParallaxLayer6"]
+position = Vector2( 960, 500 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 62 )
+centered = false
 [connection signal="animation_finished" from="PlayerSprite" to="." method="_on_PlayerSprite_animation_finished"]
